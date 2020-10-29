@@ -1,13 +1,16 @@
 package MyBinaryTree;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class MyBinaryTreeTest {
 
-	@Test
-	public void given13NumbersToAdd_WhenAnlysed_ShouldReturnSize13() {
-		MyBinaryTree<Integer> myBinaryTree = new MyBinaryTree<>();
+	private MyBinaryTree<Integer> myBinaryTree;
+
+	@Before
+	public void createAndAddElemenets() {
+		myBinaryTree = new MyBinaryTree<>();
 		myBinaryTree.add(56);
 		myBinaryTree.add(30);
 		myBinaryTree.add(70);
@@ -21,7 +24,21 @@ public class MyBinaryTreeTest {
 		myBinaryTree.add(65);
 		myBinaryTree.add(63);
 		myBinaryTree.add(67);
+	}
+
+	@Test
+	public void given3NumbersToAdd_WhenAnalysed_ShouldReturnSizeThree() {
 		Assert.assertEquals(13, myBinaryTree.size());
+	}
+
+	@Test
+	public void givenExistingElementToSearch_WhenAnalysed_ShouldReturnTheNumber() {
+		Assert.assertEquals((Integer) 16, myBinaryTree.search(16));
+	}
+
+	@Test
+	public void givenNonExistingElementToSearch_WhenAnalysed_ShouldReturnNull() {
+		Assert.assertEquals(null, myBinaryTree.search(100));
 	}
 
 }
