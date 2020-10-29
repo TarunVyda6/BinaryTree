@@ -27,7 +27,7 @@ public class MyBinaryTreeTest {
 	}
 
 	@Test
-	public void given3NumbersToAdd_WhenAnalysed_ShouldReturnSizeThree() {
+	public void given3NumbersToAdd_WhenAnalysed_ShouldReturnSize13() {
 		Assert.assertEquals(13, myBinaryTree.size());
 	}
 
